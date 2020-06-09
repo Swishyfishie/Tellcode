@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'users#home'
 
   match "signup" => "users#signup", via: :get
-  match "login" => "users#login", via: :post
+  match "login" => "users#login", via: :get
 
   resources :users, only: [:show]
   resources :days, only: [:show] do 
