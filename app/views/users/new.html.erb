@@ -1,11 +1,7 @@
-<div>
-    <form action="create" controller="users" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-        <label for="password_confirmation">Confirm your password:</label>
-        <input type="password" name="password_confirmation">
-        <input type="submit" value="Submit">
-    </form>
-</div>
+<%= form_for @user do |f|%>
+  <%= f.label :username%><br>
+  <%= f.text_field :username%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit %>
+<%end%>
