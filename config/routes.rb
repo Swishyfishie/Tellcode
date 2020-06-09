@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :days do 
-    resources :cards
+  root 'users#home'
+
+  match "signup" => "users#signup", via: :get
+
+  resources :users, only: [:show]
+  resources :days, only: [:show] do 
+    resources :cards, only: [:index]
   end    
 
-  root 'users#home'
 
 end
