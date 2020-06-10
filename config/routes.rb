@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
+  post 'logout', to: 'sessions#destroy'
   get 'create_card', to: "cards#new"
   post 'create_card', to: "cards#create"
 
-  resources :users, only: [:new, :create]
-  resources :days, only: [:show] do 
-    resources :cards, only: [:index]
+  resources :users
+  resources :days do 
+    resources :cards
   end    
+
 
 
 end
