@@ -1,17 +1,9 @@
-<h1>Welcome <%= session[:user_id] ? User.find_by(id: session[:user_id]).username : "you lovely person!" %></h1>
-<%= link_to "Login", '/login', method: :get %>
-<%= link_to "Sign Up", '/users/new', method: :get %>
-<%= link_to "Logout", '/logout', method: :post %>
-<% if name = session[:name] %>
-  <p>Welcome <%= name -%>! We know who you are thanks to Omniauth!</p>
-  <p>You were authenticated by  <%= session[:omniauth_data]['provider'] %></p>
-
-  The raw data returned from Omniauth were:
-  <pre>
-    <%= session[:omniauth_data] %>
-  </pre>
-<% else %>
-  <p>No authentication information is available.</p>
-  <p>Try <%= link_to 'Signing in with the developer strategy', '/auth/developer'%>.</p>
+<h1>Hello this is a website</h1>
+<% if !session[:user_id] %>
+  <%= link_to "Login", '/login', method: :get %>
+  <%= link_to "Sign Up", '/users/new', method: :get %>
   <p>Try <%= link_to 'Signing in with the GitHub strategy', '/auth/github'%>.</p>
+<% else %>
+  <%= link_to "You should create your first day man..." %>
+    <%= link_to "Logout", '/logout', method: :post %>
 <% end %>

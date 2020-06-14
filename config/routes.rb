@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   
   post 'logout', to: 'sessions#destroy', as: 'logout'
 
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get,:post]
+  get 'signup', to: 'users#new', as: 'signup'
 
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 
-  get 'welcome', to: 'sessions#welcome' #to delete
 
   resources :cards, only: [:index, :new, :create, :edit, :update]
-  # resources :sessions, only: [:create]
+
   resources :users
   resources :days do 
     resources :cards, only: [:index, :show]
