@@ -8,5 +8,7 @@
     <%= f.text_field :article_link%><br>
     <%= f.label :question %>
     <%= f.text_field :question%><br>
+    <p></p>
+    <%= collection_select(:card, :day_id, Day.all, :id, :day_number) %><br>
     <%= f.submit %>
 <% end %>
