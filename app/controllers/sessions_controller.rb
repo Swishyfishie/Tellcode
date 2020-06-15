@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:welcome, :new]
+  skip_before_action :require_login, only: [:welcome, :new, :github_create]
 
 
   def new
@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-
+    # add user login here from the users_controller
   end
 
   def github_create

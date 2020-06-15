@@ -5,6 +5,6 @@
   <p><%= link_to 'Sign in with Github', '/auth/github'%>.</p>
 <% else %>
 <%= flash[:success] || flash[:error] %>
-  <%= link_to "You should create your first day..." %>
+  <%= link_to "You should create your first day...", new_card_path %>
     <%= link_to "Logout", '/logout', method: :post %>
 <% end %>

@@ -1,1 +1,12 @@
 <h1>Create a new card</h1>
+<%= form_for @card do |f| %>
+    <%= f.label :youtube_link %>
+    <%= f.text_field :youtube_link%><br>
+    <%= f.label :codewars_link %>
+    <%= f.text_field :codewars_link%><br>
+    <%= f.label :article_link %>
+    <%= f.text_field :article_link%><br>
+    <%= f.label :question %>
+    <%= f.text_field :question%><br>
+    <%= f.submit %>
+<% end %>
