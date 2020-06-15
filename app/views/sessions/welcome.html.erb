@@ -4,6 +4,7 @@
   <%= link_to "Sign Up", '/users/new', method: :get %>
   <p>Try <%= link_to 'Signing in with the GitHub strategy', '/auth/github'%>.</p>
 <% else %>
+<%= flash[:success] %>
   <%= link_to "You should create your first day man..." %>
     <%= link_to "Logout", '/logout', method: :post %>
 <% end %>

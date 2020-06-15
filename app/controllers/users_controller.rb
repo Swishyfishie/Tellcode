@@ -4,20 +4,21 @@ class UsersController < ApplicationController
     end
   
     def create
-        user = User.find_by(username: user_params[:username])
-    byebug
-        if user && user.authenticate(user_params[:password])
-            session[:user_id] = user.id
+        @user = User.find_by(username: user_params[:username])
+        
+        if @user && @user.authenticate(user_params[:password])
+            session[:user_id] = @user.id
             redirect_to root_path, notice: "Logged in!"
         else 
-            flash.now[:alert] = "Wrong credentials. Try again!"
-            render "new"
+            @user = User.create(user_params)
+            session[:user_id] = @user.id
+            redirect_to root_path, notice: "Signed up and logged in!"
         end
     end
 
     private 
 
     def user_params
-        params.require(:user).permit(:username,:password)
+        params.require(:user).permit(:username,:password, :password_confirmation)
     end
 end

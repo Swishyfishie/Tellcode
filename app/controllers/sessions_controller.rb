@@ -5,11 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # byebug
     @user = User.from_omniauth(auth)
     session[:user_id] = @user.id
     flash[:success] = "Welcome, #{@user.username}!"
-    
     redirect_to '/'
   end
 
