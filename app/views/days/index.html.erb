@@ -1,0 +1,10 @@
+<h1>Welcome to 100DaysOfCode</h1>
+
+<% @days.each do |day| %>
+
+    <% day.cards.each do |card| %>
+        <h3>This is your card</h3>
+        <%= card.youtube_link %>
+        <%= card.codewars_link %>
+    <% end %>
+<% end %>
