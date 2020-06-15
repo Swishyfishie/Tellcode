@@ -14,6 +14,6 @@ class CardsController < ApplicationController
     private 
 
     def card_params
-        params.require(:card).permit(:youtube_link,:codewars_link, :article_link,:question)    
+        params.require(:card).permit(:youtube_link,:codewars_link, :article_link,:question, :day_id)    
     end
 end
