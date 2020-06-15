@@ -1,10 +1,10 @@
-<h1>Hello this is a website</h1>
+<h1>Welcome to 100DaysOfCode</h1>
 <% if !session[:user_id] %>
-  <%= link_to "Login", '/login', method: :get %>
-  <%= link_to "Sign Up", '/users/new', method: :get %>
-  <p>Try <%= link_to 'Signing in with the GitHub strategy', '/auth/github'%>.</p>
+  <p><%= link_to "Login", '/login', method: :get %></p>
+  <p><%= link_to "Sign Up", '/users/new', method: :get %></p>
+  <p><%= link_to 'Sign in with Github', '/auth/github'%>.</p>
 <% else %>
 <%= flash[:success] || flash[:error] %>
-  <%= link_to "You should create your first day man..." %>
+  <%= link_to "You should create your first day..." %>
     <%= link_to "Logout", '/logout', method: :post %>
 <% end %>

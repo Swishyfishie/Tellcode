@@ -8,7 +8,10 @@ class UsersController < ApplicationController
       
         if @user.valid?
             user_login(@user)
-        else 
+        elsif !@user.valid?
+            flash[:error] = 'Wrong credentials'
+            redirect_to login_path   
+        else
             user_create(@user)
         end
     end
