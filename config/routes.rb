@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
+  post 'login', to: 'sessions#create', as: 'login'
   post 'logout', to: 'sessions#destroy', as: 'logout'
 
 
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/:provider/callback', to: 'sessions#github_create', via: [:get, :post]
 
 
   resources :cards, only: [:index, :new, :create, :edit, :update]
