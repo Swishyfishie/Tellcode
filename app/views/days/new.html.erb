@@ -3,18 +3,19 @@
     <%= f.label :comment %>
     <%= f.text_field :comment %><br>
 
-    <%= f.fields_for :days do |d| %>
-        <%= d.label :youtube_link %>
-        <%= d.text_field :youtube_link %>
+    <%= f.fields_for :cards do |c| %>
+    
+        <%= c.label :youtube_link %>
+        <%= c.text_field :youtube_link %>
 
-        <%= d.label :codewars_link %>
-        <%= d.text_field :codewars_link %>
+        <%= c.label :codewars_link %>
+        <%= c.text_field :codewars_link %>
        
-        <%= d.label :article_link %>
-        <%= d.text_field :article_link %>
+        <%= c.label :article_link %>
+        <%= c.text_field :article_link %>
        
-        <%= d.label :question %>
-        <%= d.text_field :question %>
+        <%= c.label :question %>
+        <%= c.text_field :question %>
     <% end %>
     <%= f.submit %>
 <% end %>

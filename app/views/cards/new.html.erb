@@ -10,8 +10,8 @@
     <%= f.text_field :question%><br>
 
         <%= f.fields_for :day do |d| %>
-            <%  %>
-            <%= d.number_field :day_started %><br>
+            <%= d.label :comment %>
+            <%= d.text_field :comment %><br>
         <% end %>
 
     <%= f.submit %>
