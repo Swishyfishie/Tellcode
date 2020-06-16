@@ -5,8 +5,8 @@ class CardsController < ApplicationController
     end
 
     def create
-        # byebug
-        @card = Card.new(card_params)
+        @card = Card.create(card_params)
+        byebug
 
         redirect_to days_path
     end
