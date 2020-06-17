@@ -5,15 +5,17 @@
 h3 {
     text-align: center;
 }
-.card {
-    width: 100vw;
+.container {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    border: 5px solid rgb(37, 68, 104);
-    background-color: rgba(170, 201, 236, 0.288);
-    p {
-        text-align: center;
-    };
+    .card {
+        width: 50%;
+        margin: 1rem auto;
+        border: 5px solid rgb(37, 68, 104);
+        background-color: rgba(170, 201, 236, 0.288);
+        p {
+            text-align: center;
+        };
+    }
 }
-

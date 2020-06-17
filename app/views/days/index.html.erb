@@ -1,16 +1,19 @@
 <h1>Welcome to 100DaysOfCode</h1>
+<h2>Implement a search box here</h2>
+    <div class="container">
+        <% @days.each do |day| %>
+        <h3> <%= day.cards == [] ? " " : "Day Number #{day.id}"  %> </h3>
+            <% day.cards.each do |card| %>
+                <br>
+                <div class="card">
+                    <p><%= link_to "My tutorial", card.youtube_link %></p>
+                    <p><%= link_to "My challenge", card.codewars_link %></p>
+                    <p><%= link_to "My Article", card.article_link %></p>
+                    <p>Question of the day: "<%= card.question %>"</p>
+                    <p>Posted by  <%= card.user.username %></p>
+                    <br>
+                </div>
 
-<% @days.each do |day| %>
-
-    <% day.cards.each do |card| %>
-        <h3>Day number <%= card.user.id %></h3>
-        <div class="card">
-            <p><%= link_to "My tutorial", card.youtube_link %></p>
-            <p><%= link_to "My challenge", card.codewars_link %></p>
-            <p><%= link_to "My Article", card.article_link %></p>
-            <p>Question of the day: "<%= card.question %>"</p>
-            <p>Posted by  <%= card.user.username %></p>
-        </div>
-
-    <% end %>
-<% end %>
+            <% end %>
+        <% end %>
+    </div>
