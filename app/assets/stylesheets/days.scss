@@ -1,3 +1,19 @@
 // Place all the styles related to the Days controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h3 {
+    text-align: center;
+}
+.card {
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid rgb(37, 68, 104);
+    background-color: rgba(170, 201, 236, 0.288);
+    p {
+        text-align: center;
+    };
+}
+

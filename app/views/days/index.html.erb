@@ -3,10 +3,14 @@
 <% @days.each do |day| %>
 
     <% day.cards.each do |card| %>
-        <h3>This is your card</h3>
-        <p><%= link_to "My tutorial", card.youtube_link %></p>
-        <p><%= link_to "My challenge", card.codewars_link %></p>
-        <p><%= link_to "My Article", card.article_link %></p>
-        <p>Question of the day: "<%= card.question %>"</p>
+        <h3>Day number <%= card.user.id %></h3>
+        <div class="card">
+            <p><%= link_to "My tutorial", card.youtube_link %></p>
+            <p><%= link_to "My challenge", card.codewars_link %></p>
+            <p><%= link_to "My Article", card.article_link %></p>
+            <p>Question of the day: "<%= card.question %>"</p>
+            <p>Posted by  <%= card.user.username %></p>
+        </div>
+
     <% end %>
 <% end %>
