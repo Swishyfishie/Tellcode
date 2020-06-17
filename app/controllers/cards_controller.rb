@@ -5,7 +5,6 @@ class CardsController < ApplicationController
     def new
         @card = Card.new
         @day = @card.build_day
-            
     end
       
     def create
@@ -29,9 +28,15 @@ class CardsController < ApplicationController
     end
     
     def check_card
-        @last_card = current_user.cards.last
-        if current_user.cards.where(created_at:(Time.now - 24.hours)..Time.now).include?(@last_card)
-            redirect_to root_path
+        # change from 24hours from midnight
+
+            if current_user.cards == []
+                create
+            else
+            @last_card_date = current_user.cards.last.created_at
+            if (@last_card_date.day == (Date.today.day - 1)) && @last_card_date.month == Date.today.month
+                redirect_to root_path
+            end
         end
     end
 end

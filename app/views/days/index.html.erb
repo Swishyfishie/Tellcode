@@ -10,7 +10,7 @@
                     <p><%= link_to "My challenge", card.codewars_link %></p>
                     <p><%= link_to "My Article", card.article_link %></p>
                     <p>Question of the day: "<%= card.question %>"</p>
-                    <p>Posted by  <%= card.user.username %></p>
+                    <p>Posted by  <%= link_to card.user.username, user_path(card.user) %></p>
                     <br>
                 </div>
 
