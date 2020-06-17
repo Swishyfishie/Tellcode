@@ -1,18 +1,19 @@
 <h1>Create a new card</h1>
 <%= form_for @card do |f| %>
-    <%= f.label :youtube_link %>
-    <%= f.text_field :youtube_link%><br>
-    <%= f.label :codewars_link %>
-    <%= f.text_field :codewars_link%><br>
-    <%= f.label :article_link %>
-    <%= f.text_field :article_link%><br>
-    <%= f.label :question %>
-    <%= f.text_field :question%><br>
+        <%= f.label :youtube_link %>
+        <%= f.text_field :youtube_link%><br>
+        <%= f.label :codewars_link %>
+        <%= f.text_field :codewars_link%><br>
+        <%= f.label :article_link %>
+        <%= f.text_field :article_link%><br>
+        <%= f.label :question %>
+        <%= f.text_field :question%><br>
 
         <%= f.fields_for :day, @day do |d| %> 
             <%= d.label :comment %>
             <%= d.text_field :comment %><br>
         <% end %>
 
-    <%= f.submit %>
+        <%= f.submit %>
+
 <% end %>
