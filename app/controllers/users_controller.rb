@@ -4,7 +4,11 @@ class UsersController < ApplicationController
     def new
         @user = User.new
     end
-  
+    
+    def show
+        @user = User.find_by(id: params[:id])
+    end
+    
     def create
         @user = User.find_or_create_by(username: user_params[:username])
         if @user.valid?

@@ -1,0 +1,14 @@
+<h1>This is what <%= @user.username %> posted! </h1>
+<div class="container">
+<% @user.cards.all.each do |card| %>
+    <h2>Day number <%= card.day.id %></h2>  
+    <div class="card">
+        <p><%= link_to "My tutorial", card.youtube_link %></p>
+        <p><%= link_to "My challenge", card.codewars_link %></p>
+        <p><%= link_to "My Article", card.article_link %></p>
+        <p>Question of the day: "<%= card.question %>"</p>
+        <p>Posted by  <em><%= link_to card.user.username, user_path(card.user.id) %></em></p>
+        <br>
+    </div>    
+<% end %>
+</div>
