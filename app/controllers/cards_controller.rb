@@ -1,12 +1,12 @@
 class CardsController < ApplicationController
    before_action :check_card, only: [:create]
+   
 
     def new
         @card = Card.new
         @day = @card.build_day
             
     end
-
       
     def create
         @card = current_user.cards.create(card_params) 
