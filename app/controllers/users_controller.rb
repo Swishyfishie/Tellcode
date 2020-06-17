@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     def create
         @user = User.find_or_create_by(username: user_params[:username])
         if @user.valid?
-            user_login(@user)
+            flash[:error] = "Try to log in"
+            redirect_to login_path
         elsif !@user.valid? && @user.username && (@user.password == @user.password_confirmation)
             user_create(@user)
         else

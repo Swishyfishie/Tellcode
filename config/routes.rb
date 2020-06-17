@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
 
   get 'login', to: 'sessions#new', as: 'login'
+
   post 'login', to: 'sessions#create'
   
   post 'logout', to: 'sessions#destroy', as: 'logout'
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:index, :new, :create, :edit, :update]
 
-  resources :users
+  resources :users, only: [:new, :create, :show]
   resources :days do 
     resources :cards, only: [:index, :show]
   end    
