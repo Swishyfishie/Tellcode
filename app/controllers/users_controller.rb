@@ -4,7 +4,12 @@ class UsersController < ApplicationController
     def new
         @user = User.new
     end
-    
+
+    def index
+        @users = User.all
+        @day = params[:day_id].to_i
+    end
+
     def show
         @user = User.find_by(id: params[:id])
     end
