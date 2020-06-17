@@ -3,8 +3,10 @@ class DaysController < ApplicationController
     def index
         @days = Day.all
     end
+
     def show
-        @days = Day.all
+        # byebug
+        @day = Day.find_by(id: params[:id])
     end
 
     def new
