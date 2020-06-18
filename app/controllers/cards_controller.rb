@@ -1,6 +1,13 @@
 class CardsController < ApplicationController
    before_action :check_card, only: [:create]
    
+    def index
+
+        @user = User.find_by(id: params[:user_id])
+        if !@user.valid?
+            redirect_to (:back)
+        end
+    end
 
     def new
         @card = Card.new
