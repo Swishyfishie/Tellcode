@@ -44,7 +44,7 @@ class UsersController < ApplicationController
         if user.try(:authenticate, user_params[:password])
             session[:user_id] = user.id
             flash[:success] = "Welcome back #{user.username}"
-            redirect_to root_path
+            redirect_to user_path(user)
         else
             flash[:error] = 'Wrong credentials'
             redirect_to login_path
@@ -56,17 +56,17 @@ class UsersController < ApplicationController
         if user_params[:password] == user_params[:password_confirmation]
             user.password = user_params[:password]
             user.save
-            flash[:success] = 'Welcome To 100DaysOfCode'
+            flash[:success] = "Welcome To 100DaysOfCode #{user}"
             session[:user_id] = user.id
-            redirect_to root_path
+            redirect_to user_path(user)
         else
-            flash[:error] = "try again or Login with Github"
+            flash[:error] = "Try again or Login with Github"
             redirect_to signup_path
         end
     end
 
     def user_params
-        params.require(:user).permit(:username,:password, :password_confirmation)
+        params.require(:user).permit(:username,:password, :password_confirmation,:about_me)
     end
 
 
