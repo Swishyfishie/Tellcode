@@ -1,5 +1,11 @@
 <h1>THIS IS MY PROFILE</h1>
 <h1>ABOUT ME SECTION</h1>
 <h1>MY AVATAR</h1>
-
+<% if current_user == @user %>
+<%= flash[:success] || flash[:error] %>
+    <%= link_to "Create a card", new_card_path %>
+    <%= link_to "Edit your profile", new_card_path %>
+    <%= link_to "Logout", '/logout', method: :post %>
+    <%= link_to "Delete account", delete_account_path(current_user), method: :post %>
+<% end %>
 <h1><%= link_to "CHECK MY CARDS", user_cards_url(@user) %></h1>

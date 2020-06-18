@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])   
     if @user && @user.authenticate(params[:password])      
       session[:user_id] = @user.id      
-      redirect_to root_path   
+      redirect_to user_path(@user)   
     else      
       redirect_to login_path  
     end
@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     @user = User.from_omniauth(auth)
     session[:user_id] = @user.id
     flash[:success] = "Welcome, #{@user.username}!"
-    redirect_to '/'
+    redirect_to user_path(@user)
   end
 
   def destroy

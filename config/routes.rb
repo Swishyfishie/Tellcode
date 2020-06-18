@@ -15,11 +15,12 @@ Rails.application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#github_create', via: [:get, :post]
 
 
-  resources :cards, only: [:index, :new, :create, :edit, :update]
+  resources :cards, only: [:index, :new, :create]
 
-  resources :users, only: [:new, :create, :show] do 
+  resources :users, only: [:new, :create, :show,:edit, :update] do 
     resources :cards, only: [:index]
   end
+  
   resources :days do 
     resources :cards, only: [:index, :show]
     resources :users, only: [:index]
