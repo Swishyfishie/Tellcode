@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   post 'logout', to: 'sessions#destroy', as: 'logout'
 
+  post '/users/:id', to: 'users#destroy', as: 'delete_account'  
 
   match 'auth/:provider/callback', to: 'sessions#github_create', via: [:get, :post]
 

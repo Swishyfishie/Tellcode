@@ -3,7 +3,6 @@
 <% @user.cards.all.each do |card| %>
     <h2>Day number <%= card.day.id %></h2>  
     <div class="card">
-<%= youtube_video(card.youtube_link) %>
         <p><%= link_to "My tutorial", card.youtube_link %></p>
         <p><%= link_to "My challenge", card.codewars_link %></p>
         <p><%= link_to "My Article", card.article_link %></p>

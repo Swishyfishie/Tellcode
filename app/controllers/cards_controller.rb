@@ -26,7 +26,7 @@ class CardsController < ApplicationController
         end
     end
 
-    
+
     private 
     
     def card_params

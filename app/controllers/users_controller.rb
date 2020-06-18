@@ -27,6 +27,17 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        if current_user.cards != []
+            current_user.cards.each do |card|
+                card.destroy
+            end
+        end
+        current_user.destroy
+        session.destroy
+        redirect_to root_path
+    end
+
     private 
   
     def user_login(user)
