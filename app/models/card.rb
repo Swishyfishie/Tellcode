@@ -1,9 +1,9 @@
 class Card < ApplicationRecord
     belongs_to :user
     belongs_to :day
-    validates :youtube_link, presence: true
-    validates :codewars_link, presence: true
-    validates :article_link, presence: true
+    validates :youtube_link, :url => true
+    validates :codewars_link, :url => true
+    validates :article_link, :url => true
 
     accepts_nested_attributes_for :day
 
