@@ -1,4 +1,9 @@
 <h1>Create a new card</h1>
+
+<% @card.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+<% end %>
+
 <%= form_for @card do |f| %>
         <%= f.label :youtube_link %>
         <%= f.text_field :youtube_link%><br>
