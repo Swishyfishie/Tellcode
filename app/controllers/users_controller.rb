@@ -13,7 +13,18 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by(id: params[:id])
     end
-    
+
+    def edit
+        @user = User.find_by(id: params[:id])
+    end
+
+    def update
+        @user = User.find_by(id: params[:id])
+        @user.update(user_params)
+
+        redirect_to user_path(@user)
+    end
+
     def create
         @user = User.find_or_create_by(username: user_params[:username])
         if @user.valid?
@@ -66,7 +77,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username,:password, :password_confirmation,:about_me)
+        params.require(:user).permit(:username, :password, :password_confirmation, :about_me)
     end
 
 

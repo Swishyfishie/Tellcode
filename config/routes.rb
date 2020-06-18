@@ -17,10 +17,10 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:index, :new, :create]
 
-  resources :users, only: [:new, :create, :show,:edit, :update] do 
+  resources :users, only: [:new, :create, :show, :edit, :update] do 
     resources :cards, only: [:index]
   end
-  
+
   resources :days do 
     resources :cards, only: [:index, :show]
     resources :users, only: [:index]
