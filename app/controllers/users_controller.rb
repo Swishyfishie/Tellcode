@@ -69,6 +69,7 @@ class UsersController < ApplicationController
             user.save
             flash[:success] = "Welcome To 100DaysOfCode #{user}"
             session[:user_id] = user.id
+
             redirect_to user_path(user)
         else
             flash[:error] = "Try again or Login with Github"

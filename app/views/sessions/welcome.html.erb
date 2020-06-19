@@ -5,3 +5,10 @@
   <p><%= link_to "Sign Up", '/signup', method: :get %></p>
   <p><%= link_to 'Sign in with Github', '/auth/github'%>.</p>
 <% end %>
+
+<h4>The users who started our coding challenge! </h4>
+
+
+<% User.created_today(Time.now - 24.hours).each do |u|  %>
+  <%= link_to u.username, user_path(u) %>
+<% end %>

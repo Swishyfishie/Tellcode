@@ -1,10 +1,10 @@
 class CardsController < ApplicationController
    before_action :check_card, only: [:create]
-   
+
     def index
         @user = User.find_by(id: params[:user_id])
         if !@user.valid?
-            redirect_to (:back)
+            redirect_to root_path
         end
     end
 
@@ -47,7 +47,5 @@ class CardsController < ApplicationController
     end
 end
 
-# create a scope method card where created_at is yesterday
-def created_yesterday(today)
-    (@last_card_date.day == (today - 1)) && @last_card_date.month == today.month
-end
+
+

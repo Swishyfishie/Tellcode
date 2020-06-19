@@ -5,6 +5,9 @@ class User < ApplicationRecord
     has_many :days, through: :cards
     
     validates :username, presence: true
+    validates :password, presence: true
+    scope :created_today, ->(time) { where("created_at > ?", time) }
+
 
     def self.from_omniauth(auth)
       find_or_create_by(username: auth.info.nickname) do |user|
