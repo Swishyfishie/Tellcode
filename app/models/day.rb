@@ -11,8 +11,6 @@ class Day < ApplicationRecord
     def self.search(search)
         if search
             day_number = Day.find_by(id: search)
-        else
-            @days = Day.all 
         else 
             @days = Day.all
         end

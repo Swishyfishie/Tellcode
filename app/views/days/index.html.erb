@@ -1,4 +1,14 @@
 <h1 style="text-align: center; margin-top:2rem;">Welcome to TellCode</h1>
+
+<div class="searchForm">
+<%= form_tag days_path, :method => "get" do %>
+    <%= label_tag(:search, "Find a Day:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("Search", :name => nil) %>
+<% end %>
+</div>
+
+
     <div class="container">
         <% @days.each do |day| %>
         <h3 class="dayNumber"> <%= day.cards == [] ? " " : "Day Number #{day.id}"  %> </h3>
