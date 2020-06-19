@@ -1,8 +1,11 @@
 <h1>Create a new card</h1>
 
+<div>
+
 <% @card.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
+    <p class="error"><%= message %></p>
 <% end %>
+</div>
 
 <%= form_for @card do |f| %>
         <%= f.label :youtube_link %>

@@ -1,14 +1,23 @@
-<h1>Welcome to 100DaysOfCode</h1>
+
 <h2><%= flash[:error] %></h2>
 <% if !session[:user_id] %>
-  <p><%= link_to "Login", '/login', method: :get %></p>
-  <p><%= link_to "Sign Up", '/signup', method: :get %></p>
-  <p><%= link_to 'Sign in with Github', '/auth/github'%>.</p>
+<nav>
+  <ul>
+    <li><%= link_to "Login", '/login', method: :get %></li>
+    <li><%= link_to "Sign Up", '/signup', method: :get %></li>
+    <li><%= link_to 'Sign in with Github', '/auth/github'%></li>
+  </ul>
+</nav>
 <% end %>
+<div class="hero">
+  <h1>Welcome to TellCode - Social Coding</h1>
+</div>
 
+<div class="smallHero">
 <h4>The users who started our coding challenge today! </h4>
 
 
 <% User.created_today(Time.now - 24.hours).each do |u|  %>
   <%= link_to u.username, user_path(u) %>
 <% end %>
+</div>

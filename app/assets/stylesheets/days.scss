@@ -12,10 +12,15 @@ h3, h2 {
     .card {
         width: 50%;
         margin: 1rem auto;
-        border: 5px solid rgb(37, 68, 104);
+        border: 5px solid #254468;
         background-color: rgba(170, 201, 236, 0.288);
+        padding: 1rem;
+        display: flex;
+ 
+        flex-direction: column;
         p {
             text-align: center;
+            padding: 1rem;
         };
     }
 }
