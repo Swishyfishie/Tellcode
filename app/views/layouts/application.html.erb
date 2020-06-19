@@ -11,6 +11,17 @@
 
   <body>
 
+    <% if current_user  %>
+      <nav>
+        <ul>
+          <li><a href="#">Create a post</a></li>
+          <li><a href="#">My Profile</a></li>
+          <li><a href="#">All posts</a></li>
+          <li><a href="#">Logout</a></li>
+          <li><a href="#">Delete Account</a></li>
+        </ul>
+      </nav>
+    <% end %>
   
     <%= yield %>
   
