@@ -1,4 +1,4 @@
-<h1>This is what <%= @user.username %> posted! </h1>
+<h1 style="text-align: center;">This is what <%= @user.username %> posted! </h1>
 <div class="container">
 <% @user.cards.all.each do |card| %>
     <h2>Day number <%= card.day.id %></h2>  
