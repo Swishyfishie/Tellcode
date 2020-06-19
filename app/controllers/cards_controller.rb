@@ -34,13 +34,12 @@ class CardsController < ApplicationController
     end
     
     def check_card
-        # change from 24hours from midnight
 
             if current_user.cards == [] #ensures that new users can create their first card
                 create
             else
             @last_card_date = current_user.cards.last.created_at
-            if (@last_card_date.day == (Date.today.day - 1)) && @last_card_date.month == Date.today.month
+            if (@last_card_date.day == (Date.today.day)) && @last_card_date.month == Date.today.month
                 redirect_to root_path
             end
         end

@@ -11,6 +11,20 @@
 
   <body>
 
+  <% if current_user == nil || current_user.id == nil%>
+    <%=  %>
+  <% else %>
+      <nav>
+        <ul>
+        <li><%= link_to "Create a post", new_card_path %></li>
+        <li><%= link_to "See all activity", days_path %></li>
+        <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
+        <li><%= link_to "Logout", '/logout', method: :post %></li>
+        <li><%= link_to "Delete account", delete_account_path(current_user), method: :post %></li>
+        </ul>
+      </nav>
+    
+  <% end %>
 
   
     <%= yield %>
