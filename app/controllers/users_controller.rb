@@ -66,6 +66,7 @@ class UsersController < ApplicationController
     def user_create(user)
         if user_params[:password] == user_params[:password_confirmation]
             user.password = user_params[:password]
+            user.about_me = user_params[:about_me]
             user.save
             flash[:success] = "Welcome To 100DaysOfCode #{user}"
             session[:user_id] = user.id
