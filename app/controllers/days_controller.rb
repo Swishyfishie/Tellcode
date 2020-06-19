@@ -1,12 +1,20 @@
 class DaysController < ApplicationController
 
     def index
-        @days = Day.all
-        
+        if params[:search] != nil
+            day = Day.find_by(id: params[:search])
+            if day 
+            redirect_to day_path(day)
+            else 
+                @days = Day.all
+            end
+        else
+            @days = Day.all
+        end
     end
 
     def show
-        # byebug
+  
         @day = Day.find_by(id: params[:id])
     end
 
@@ -15,9 +23,7 @@ class DaysController < ApplicationController
     end
     
     def create
-        @day = Day.create(day_params)
-        byebug
-        
+        @day = Day.create(day_params)       
         redirect_to days_path
     end
     
