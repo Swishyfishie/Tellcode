@@ -29,6 +29,13 @@ h3, h2 {
     }
 }
 
+.cardCreationError {
+    position: absolute;
+    color: red;
+    padding: 2rem;
+    bottom: 400px;
+}
+
 .dayNumber {
     width:100%;
     color: #eef6ff;
