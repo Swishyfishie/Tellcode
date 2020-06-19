@@ -40,6 +40,7 @@ class CardsController < ApplicationController
             else
             @last_card_date = current_user.cards.last.created_at
             if (@last_card_date.day == (Date.today.day)) && @last_card_date.month == Date.today.month
+                flash[:error] = "You cannot create more than one post a day!"
                 redirect_to root_path
             end
         end
