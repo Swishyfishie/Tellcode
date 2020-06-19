@@ -7,9 +7,9 @@
     padding: 0;
 }
 body {
-    background-color: #3b3535;
+    background-color: #576CA8;
     font-family: 'Muli', sans-serif;
-    color: whitesmoke;
+    color: #F5F3F5;
 }
 a {
     color: rgb(215, 218, 253);
@@ -19,6 +19,8 @@ nav {
     width: 100vw;
     height: 3rem;
     background-color: #3b3535;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.158);
     
     ul {
         display: flex;
@@ -60,10 +62,6 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
-    li {
-       
-    }
     a {
         text-decoration: none;
         color: rgb(142, 198, 243);

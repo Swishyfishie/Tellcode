@@ -1,5 +1,5 @@
 
-<h2><%= flash[:error] %></h2>
+
 <% if !session[:user_id] %>
 <nav>
   <ul>
@@ -14,6 +14,7 @@
 </div>
 
 <div class="smallHero">
+<h4><%= flash[:error] %></h4>
 <h4>The users who started our coding challenge today! </h4>
 
 

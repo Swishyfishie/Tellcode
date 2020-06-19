@@ -2,7 +2,7 @@
 <h2>Implement a search box here</h2>
     <div class="container">
         <% @days.each do |day| %>
-        <h3> <%= day.cards == [] ? " " : "Day Number #{day.id}"  %> </h3>
+        <h3 class="dayNumber"> <%= day.cards == [] ? " " : "Day Number #{day.id}"  %> </h3>
             <% day.cards.each do |card| %>
                 <br>
                 <div class="card">
