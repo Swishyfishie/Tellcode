@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :require_login, only: [:new ,:create]
+    before_action :user_check, only: [:edit, :update]
 
     def new
         @user = User.new
@@ -74,6 +75,13 @@ class UsersController < ApplicationController
         else
             flash[:error] = "Try again or Login with Github"
             redirect_to signup_path
+        end
+    end
+
+    def user_check
+        @user = User.find_by(id: params[:id])
+        if current_user != @user
+            redirect_to root_path
         end
     end
 
