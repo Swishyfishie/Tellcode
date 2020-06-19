@@ -15,7 +15,7 @@
 
 <div class="smallHero">
 <h4 class="cardCreationError"><%= flash[:error] %></h4>
-<h4>The users who started our coding challenge today! </h4>
+<h4>The users who started our coding challenge today: </h4>
 
 
 <% User.created_today(Time.now - 24.hours).each do |u|  %>

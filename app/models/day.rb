@@ -8,5 +8,13 @@ class Day < ApplicationRecord
         "Day number #{self.id}!"
     end
     
-
+    def self.search(search)
+        if search
+            day_number = Day.find_by(id: search)
+        else
+            @days = Day.all 
+        else 
+            @days = Day.all
+        end
+    end
 end
