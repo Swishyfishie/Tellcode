@@ -4,8 +4,8 @@ class User < ApplicationRecord
     has_many :cards
     has_many :days, through: :cards
     
-    validates :username, presence: true
-    validates :password, presence: true
+    validates_presence_of :username, presence: true
+    validates_presence_of :password, on: [:new, :create]
     scope :created_today, ->(time) { where("created_at > ?", time) }
 
 
