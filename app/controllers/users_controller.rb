@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     def update
         @user = User.find_by(id: params[:id])
         @user.update(user_params)
-
+        byebug
         redirect_to user_path(@user)
     end
 
